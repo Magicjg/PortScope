@@ -4,6 +4,7 @@ import queue
 import threading
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
+from pathlib import Path
 
 from .benchmark import (
     DEFAULT_FILE_SIZE_MB,
@@ -98,7 +99,8 @@ class PortScopeApp:
         self.root.title("PortScope")
         self.root.geometry("1340x880")
         self.root.minsize(1120, 740)
-        self.release_version = "PortScope Release 0.5.0"
+        self.release_version = "PortScope Release 0.5.1"
+        self._apply_window_icon()
 
         self.settings = load_settings()
         self.theme_name = str(self.settings.get("theme", "light"))
@@ -173,6 +175,15 @@ class PortScopeApp:
     @property
     def colors(self) -> dict[str, str]:
         return THEMES[self.theme_name]
+
+    def _apply_window_icon(self) -> None:
+        ico_path = Path(__file__).resolve().parent.parent / "assets" / "portscope.ico"
+        if not ico_path.exists():
+            return
+        try:
+            self.root.iconbitmap(default=str(ico_path))
+        except tk.TclError:
+            pass
 
     def _bind_state_tracking(self) -> None:
         self.selected_folder.trace_add("write", lambda *_: self._save_preferences())

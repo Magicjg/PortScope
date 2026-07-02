@@ -60,8 +60,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build_release.ps1
 
 Salida esperada:
 
-- `release\PortScope-0.5.0-win64\PortScope.exe`
-- `release\PortScope-0.5.0-win64.zip`
+- `release\PortScope-0.5.1-win64\PortScope.exe`
+- `release\PortScope-0.5.1-win64.zip`
 
 ## Tests
 
@@ -80,6 +80,7 @@ python -m unittest discover -s .\tests -v
 - `portscope/exporters.py`: exportacion de inventario
 - `tests/`: pruebas automatizadas
 - `scripts/build_release.ps1`: build del ejecutable
+- `assets/portscope.ico`: icono del ejecutable y de la app
 
 ## Logs y datos locales
 
