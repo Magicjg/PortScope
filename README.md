@@ -1,30 +1,81 @@
 # PortScope
 
-Aplicacion de escritorio para Windows orientada a diagnosticar puertos, enlaces y rendimiento real de transferencia.
+<p align="center">
+  <img src="./assets/portscope-icon.png" alt="PortScope logo" width="160" />
+</p>
 
-## Que hace
+<p align="center">
+  Aplicacion de escritorio para Windows orientada a diagnosticar puertos, enlaces y rendimiento real de transferencia.
+</p>
 
-- Detecta inventario USB, red, unidades y dispositivos conectados ahora mismo
-- Muestra estado por modulo para distinguir entre lectura correcta y fallo parcial
-- Ejecuta benchmark real de lectura y escritura en una ruta elegida
-- Guarda historial de benchmarks y lo exporta a CSV
-- Exporta inventario completo a JSON o a un paquete CSV por secciones
-- Incluye modo claro y modo nocturno
+## Vista general
 
-## Funciones incluidas
+PortScope reune en una sola app:
 
-- Barra superior de informacion con resumen tecnico fuera de la vista principal
-- Modo claro y modo nocturno con mejor contraste visual
-- Paleta renovada para tablas, tarjetas, botones y paneles
-- Recordatorio de tema, carpeta usada y configuracion del benchmark
-- Filtros de busqueda para USB, red y unidades
-- Inventario USB con fabricante, categoria, velocidad estimada y pista de energia
-- Inventario de red con tipo de adaptador, estado y velocidad negociada
-- Inventario de unidades con letra, salud, espacio libre y tamano
-- Estado de modulos USB, red y unidades para detectar fallos parciales
-- Benchmark con varias pasadas para lectura y escritura real
-- Historial persistente de pruebas y exportacion a CSV
-- Exportacion de inventario a JSON o paquete CSV
+- inventario USB, red y unidades
+- deteccion de dispositivos conectados ahora mismo
+- estado por modulo para detectar fallos parciales
+- benchmark real de lectura y escritura
+- historial persistente
+- exportacion de inventario y resultados
+
+## Capturas
+
+### Inicio
+
+**Modo claro**
+
+![PortScope inicio claro](./docs/screenshots/inicio-light.png)
+
+**Modo oscuro**
+
+![PortScope inicio oscuro](./docs/screenshots/inicio-dark.png)
+
+### Benchmark
+
+**Modo claro**
+
+![PortScope benchmark claro](./docs/screenshots/benchmark-light.png)
+
+**Modo oscuro**
+
+![PortScope benchmark oscuro](./docs/screenshots/benchmark-dark.png)
+
+## Funcionalidades principales
+
+### Inventario tecnico
+
+- Detecta puertos y dispositivos USB visibles
+- Muestra fabricantes, categoria, velocidad estimada y disponibilidad de energia
+- Lista adaptadores de red, tipo de enlace y velocidad negociada
+- Muestra unidades, salud, espacio libre y destinos listos para benchmark
+
+### Estado del equipo
+
+- Resume estado por modulo: `USB`, `Red` y `Unidades`
+- Señala hallazgos utiles para actuar rapido
+- Diferencia entre lectura correcta y fallo parcial de un modulo
+
+### Benchmark de transferencia
+
+- Ejecuta pruebas reales de lectura y escritura en la ruta elegida
+- Usa carpeta temporal segura y la limpia al terminar
+- Permite cancelar la prueba sin dejar rastro
+- Guarda historial y permite reusar destinos anteriores
+
+### Exportacion y trazabilidad
+
+- Exporta historial de benchmark a CSV
+- Exporta inventario completo a JSON
+- Exporta inventario por secciones a un paquete CSV
+- Guarda logs locales para revisar errores o ejecuciones
+
+### Interfaz
+
+- Modo claro y modo nocturno
+- Pestañas por area de trabajo
+- Scroll dinamico en areas largas
+- Compatibilidad con rueda del mouse en Benchmark
 
 ## Limitaciones honestas
 
@@ -78,9 +129,10 @@ python -m unittest discover -s .\tests -v
 - `portscope/history.py`: historial y preferencias
 - `portscope/logger.py`: logs locales
 - `portscope/exporters.py`: exportacion de inventario
-- `tests/`: pruebas automatizadas
-- `scripts/build_release.ps1`: build del ejecutable
 - `assets/portscope.ico`: icono del ejecutable y de la app
+- `docs/screenshots/`: capturas usadas en la documentacion
+- `scripts/build_release.ps1`: build del ejecutable
+- `tests/`: pruebas automatizadas
 
 ## Logs y datos locales
 
