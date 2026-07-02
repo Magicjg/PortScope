@@ -8,6 +8,32 @@
   Aplicacion de escritorio para Windows orientada a diagnosticar puertos, enlaces y rendimiento real de transferencia.
 </p>
 
+<p align="center">
+  <a href="https://github.com/Magicjg/PortScope/releases/tag/v0.5.1"><img src="https://img.shields.io/badge/release-v0.5.1-2563eb" alt="Release v0.5.1" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-10b981" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/tests-8%20passing-22c55e" alt="8 tests passing" />
+  <img src="https://img.shields.io/badge/platform-Windows-0f172a" alt="Windows only" />
+</p>
+
+## Quick Start
+
+### Opcion 1. Descargar y ejecutar
+
+1. Ve a la [release mas reciente](https://github.com/Magicjg/PortScope/releases/tag/v0.5.1).
+2. Descarga `PortScope-0.5.1-win64.zip`.
+3. Extrae el ZIP.
+4. Ejecuta `PortScope.exe`.
+
+### Opcion 2. Ejecutar desde codigo
+
+```powershell
+python .\app.py
+```
+
+## Demo
+
+![PortScope demo](./docs/portscope-demo.gif)
+
 ## Vista general
 
 PortScope reune en una sola app:
@@ -53,7 +79,7 @@ PortScope reune en una sola app:
 ### Estado del equipo
 
 - Resume estado por modulo: `USB`, `Red` y `Unidades`
-- Señala hallazgos utiles para actuar rapido
+- Senala hallazgos utiles para actuar rapido
 - Diferencia entre lectura correcta y fallo parcial de un modulo
 
 ### Benchmark de transferencia
@@ -73,7 +99,7 @@ PortScope reune en una sola app:
 ### Interfaz
 
 - Modo claro y modo nocturno
-- Pestañas por area de trabajo
+- Pestanas por area de trabajo
 - Scroll dinamico en areas largas
 - Compatibilidad con rueda del mouse en Benchmark
 
@@ -88,12 +114,6 @@ PortScope reune en una sola app:
 - Windows 10 u 11
 - Python 3.11+ para ejecutar desde codigo
 - No depende de librerias de runtime externas; usa Tkinter y utilidades del propio sistema
-
-## Ejecutar desde codigo
-
-```powershell
-python .\app.py
-```
 
 ## Crear el EXE de release
 
@@ -131,6 +151,7 @@ python -m unittest discover -s .\tests -v
 - `portscope/exporters.py`: exportacion de inventario
 - `assets/portscope.ico`: icono del ejecutable y de la app
 - `docs/screenshots/`: capturas usadas en la documentacion
+- `docs/portscope-demo.gif`: demo corta de la app
 - `scripts/build_release.ps1`: build del ejecutable
 - `tests/`: pruebas automatizadas
 
